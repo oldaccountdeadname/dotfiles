@@ -30,6 +30,8 @@
 
   services.printing.enable = true;
 
+  services.gnome.gnome-keyring.enable = true;
+
   sound.enable = true;
   services.pipewire.enable = true;
   services.pipewire.alsa.enable = true;

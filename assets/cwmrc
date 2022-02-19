@@ -1,5 +1,7 @@
 command term kitty
 command wb firefox
+command sk skypeforlinux
+command dc discord
 
 bind-key 4-Return window-vtile
 bind-key 4-s window-cycle

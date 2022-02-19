@@ -10,4 +10,5 @@ polybar time &
 polybar painted &
 notify &
 picom &
+gnome-keyring-daemon &
 cwm
