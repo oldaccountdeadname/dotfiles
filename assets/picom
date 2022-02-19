@@ -1,0 +1,7 @@
+backend = "glx";
+
+shadow = true;
+
+shadow-radius = 4;
+shadow-offset-y = 8;
+shadow-offset-x = 8;

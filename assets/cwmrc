@@ -1,0 +1,13 @@
+command term kitty
+command wb firefox
+
+bind-key 4-Return window-vtile
+bind-key 4-s window-cycle
+bind-key 4-n window-rcycle
+bind-key 4-t window-close
+bind-key 4-h window-hide
+
+bind-key 4-l terminal
+
+vtile 35
+gap 48 0 6 6
