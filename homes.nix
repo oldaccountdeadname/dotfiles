@@ -16,6 +16,11 @@
       recursive = true;
     };
 
+    home.file.".config/mutt" = {
+      source = ./assets/mutt;
+      recursive = true;
+    };
+
     home.file.".config/picom/picom.conf".source = ./assets/picom;
 
     home.file."bin/cwm.sh" = {
