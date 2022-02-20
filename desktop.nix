@@ -15,6 +15,8 @@
   networking.nameservers = [ "192.168.0.2" ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/9c2eaaeb-d160-4c96-93f9-b8e91e90a54a";
