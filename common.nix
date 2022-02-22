@@ -69,6 +69,7 @@
   fonts.fonts = with pkgs; [ fira-code ];
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix gnumake gcc
+    qemu
     neofetch git mutt pulsemixer libnotify
     xclip kitty feh picom polybar firefox
 
