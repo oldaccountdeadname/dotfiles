@@ -71,7 +71,7 @@
     man-pages man-pages-posix gnumake gcc valgrind
     qemu
     neofetch git mutt pulsemixer libnotify
-    xclip kitty feh picom polybar firefox
+    xclip kitty zathura feh picom polybar firefox
 
     skypeforlinux discord
   ];
