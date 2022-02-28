@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.firewall.allowedTCPPorts = [ 80 443 1965 ];
 
