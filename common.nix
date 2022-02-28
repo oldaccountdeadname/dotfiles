@@ -4,15 +4,24 @@
 
   networking.firewall.allowedTCPPorts = [ 80 443 1965 ];
 
-  fileSystems."/mnt/remote" = {
-    device = "hub.marx:/nas/remote";
-    fsType = "nfs";
-  };
-
-  fileSystems."/mnt/public" = {
-    device = "hub.marx:/nas/public";
-    fsType = "nfs";
-  };
+  systemd.mounts = [
+    {
+      what = "hub.marx:/nas/remote";
+      where = "/mnt/remote";
+      type = "nfs";
+      wantedBy = [ "multi-user.target" ];
+      wants = [ "network-online.target" ];
+      after = [ "network-online.target" ];
+    }
+    {
+      where = "/mnt/public";
+      what = "hub.marx:/nas/public";
+      type = "nfs";
+      wantedBy = [ "multi-user.target" ];
+      wants = [ "network-online.target" ];
+      after = [ "network-online.target" ];
+    }
+  ];
 
   time.timeZone = "America/Denver";
 
@@ -69,7 +78,7 @@
   fonts.fonts = with pkgs; [ fira-code ];
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix gnumake gcc valgrind
-    qemu
+    nfs-utils qemu
     neofetch git mutt pulsemixer libnotify
     xclip kitty zathura feh picom polybar firefox
 
