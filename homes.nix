@@ -6,6 +6,8 @@
     home.file.".cwmrc".source = ./assets/cwmrc;
     home.file."doc/bg.png".source = ./assets/bg.png;
 
+    home.file.".emacs.d/init.el".source = ./assets/emacs.init.el;
+
     home.file.".config/amp" = {
       source = ./assets/amp;
       recursive = true;

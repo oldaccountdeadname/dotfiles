@@ -84,6 +84,8 @@
     xclip kitty zathura feh picom polybar firefox
 
     skypeforlinux discord
+
+    (import ./emacs.nix { inherit pkgs; })
   ];
 
   programs.gnupg.agent.enable = true;
