@@ -76,14 +76,14 @@
     "EDITOR" = "amp";
   };
 
-  fonts.fonts = with pkgs; [ fira-code ];
+  fonts.fonts = with pkgs; [ fira-code source-sans-pro source-serif-pro ];
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix gnumake gcc valgrind
     nfs-utils qemu
     neofetch git mutt pulsemixer libnotify
     xclip kitty zathura feh picom polybar firefox
 
-    skypeforlinux discord
+    skypeforlinux discord texlive.combined.scheme-medium
 
     (import ./emacs.nix { inherit pkgs; })
   ];

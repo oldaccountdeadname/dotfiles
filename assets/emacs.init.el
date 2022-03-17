@@ -161,4 +161,4 @@
  '(org-table ((t (:foreground "#842879" :family "FiraCode"))))
  '(org-todo ((t (:foreground "#4a4a4a" :weight bold :family "FiraCode"))))
  '(org-verbatim ((t (:foreground "#4F894C" :weight semi-bold :family "FiraCode"))))
- '(variable-pitch ((t (:weight normal :height 1.2 :family "NotoSerif")))))
+ '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4")))))
