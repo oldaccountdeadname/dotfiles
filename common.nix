@@ -35,8 +35,6 @@
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.libinput.enable = true;
-  services.xserver.windowManager.cwm.enable = true;
-  services.xserver.displayManager.startx.enable = true;
 
   services.printing.enable = true;
 
@@ -81,7 +79,7 @@
     man-pages man-pages-posix gnumake gcc valgrind ccls
     nfs-utils qemu
     neofetch gitFull mutt pulsemixer libnotify
-    xclip kitty zathura feh picom polybar firefox
+    xclip kitty zathura feh polybar firefox
 
     skypeforlinux discord texlive.combined.scheme-medium
 
