@@ -110,6 +110,8 @@
 	      c-basic-offset 8
 	      indent-tabs-mode t)
 
+(add-to-list 'auto-mode-alist '("\\.nix\\'" . prog-mode))
+
 (require 'lsp-mode)
 
 (add-hook 'c-mode-hook '(lambda ()
