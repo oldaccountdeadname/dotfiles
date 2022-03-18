@@ -80,7 +80,7 @@
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix gnumake gcc valgrind ccls
     nfs-utils qemu
-    neofetch git mutt pulsemixer libnotify
+    neofetch gitFull mutt pulsemixer libnotify
     xclip kitty zathura feh picom polybar firefox
 
     skypeforlinux discord texlive.combined.scheme-medium
