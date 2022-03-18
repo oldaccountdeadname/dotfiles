@@ -1,6 +1,6 @@
 { pkgs }:
 
-let emacs = pkgs.emacs;
+let emacs = pkgs.emacsGcc;
     emacsWithPackages = (pkgs.emacsPackagesFor emacs).emacsWithPackages;
 in
   emacsWithPackages (epkgs: (with epkgs.melpaStablePackages; [

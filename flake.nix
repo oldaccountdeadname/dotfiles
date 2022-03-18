@@ -1,6 +1,8 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
 
+  inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
+
   inputs.home-manager.url = "github:nix-community/home-manager";
 
   inputs.amp = {
@@ -13,10 +15,12 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, amp, painted }:
+  outputs = { self, nixpkgs, emacs-overlay, home-manager, amp, painted }:
     let commonModules = [
       home-manager.nixosModule
       ./homes.nix ./common.nix
+
+      { nixpkgs.overlays = [ emacs-overlay.overlay ]; }
 
       ({config, ...}: {
         environment.systemPackages = [
