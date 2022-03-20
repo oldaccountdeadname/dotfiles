@@ -33,7 +33,7 @@
       nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = commonModules
-          ++ [ ./desktop.nix ./envs/cwm.nix ];
+          ++ [ ./desktop.nix ./envs/gnome.nix ];
       };
 
     };
