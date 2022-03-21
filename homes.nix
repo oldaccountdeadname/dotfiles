@@ -15,6 +15,7 @@
       recursive = true;
     };
 
+    home.file.".mbsyncrc".source = ./assets/isync.conf;
     home.file.".config/mutt" = {
       source = ./assets/mutt;
       recursive = true;

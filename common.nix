@@ -38,6 +38,11 @@
 
   services.printing.enable = true;
 
+  services.cron.enable = true;
+  services.cron.systemCronJobs = [
+    "* * * * * a mbsync -a"
+  ];
+
   services.gnome.gnome-keyring.enable = true;
 
   sound.enable = true;
@@ -78,7 +83,7 @@
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix gnumake gcc valgrind ccls
     nfs-utils qemu
-    neofetch gitFull mutt pulsemixer libnotify
+    neofetch gitFull mu mutt isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox
 
     skypeforlinux discord texlive.combined.scheme-medium

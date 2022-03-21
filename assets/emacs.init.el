@@ -141,6 +141,28 @@
 			    (display-line-numbers-mode -1)
 			    (variable-pitch-mode 1)))
 
+(setq mu4e-compose-signature
+"Lincoln Auster
+they/them")
+
+(setq user-full-name "lincoln auster [they/them]"
+      user-mail-address "lincolnauster@gmail.com")
+
+(setq send-mail-function 'smtpmail-send-it
+      smtpmail-smtp-service 587
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-servers-requiring-authorization ".*"
+      smtpmail-stream-type 'starttls
+      smtpmail-auth-credentials
+        '(("smtp.gmail.com" 587 "lincolnauster@gmail.com"
+           (string-trim
+	    (shell-command-to-string
+	     "gpg -q --batch -q --decrypt ~/.config/mutt/account.gpg")))))
+
+(add-to-list 'load-path "/run/current-system/sw/share/emacs/site-lisp/mu4e")
+(require 'mu4e)
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
