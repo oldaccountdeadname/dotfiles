@@ -6,6 +6,10 @@
     home.file.".background-image".source = ./../assets/bg-flag.png;
   };
 
+  environment.gnome.excludePackages = with pkgs; [
+    gnome.gnome-contacts gnome.gnome-weather gnome.cheese gnome.gedit
+  ];
+
   networking.networkmanager.enable = pkgs.lib.mkForce false;
   hardware.pulseaudio.enable = pkgs.lib.mkForce false;
 }
