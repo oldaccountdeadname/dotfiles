@@ -7,7 +7,7 @@
   };
 
   environment.gnome.excludePackages = with pkgs; [
-    gnome.gnome-contacts gnome.gnome-weather gnome.cheese gnome.gedit
+    gnome.geary gnome.gnome-contacts gnome.gnome-weather gnome.cheese gnome.gedit
   ];
 
   networking.networkmanager.enable = pkgs.lib.mkForce false;
