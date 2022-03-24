@@ -3,6 +3,8 @@
 (global-display-line-numbers-mode 1)
 (toggle-scroll-bar -1)
 
+(setq x-select-enable-clipboard t)
+
 ;; i just copied this off of LSP docs - they seem aggressive, but they certainly
 ;; work.
 (setq gc-cons-threshold 100000000)
