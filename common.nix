@@ -40,7 +40,8 @@
 
   services.cron.enable = true;
   services.cron.systemCronJobs = [
-    "* * * * * a mbsync -a"
+    "* * * * * a torsocks mbsync -a"
+    "10 * * * * root systemctl restart tor.service"
   ];
 
   services.gnome.gnome-keyring.enable = true;
@@ -49,6 +50,8 @@
   services.pipewire.enable = true;
   services.pipewire.alsa.enable = true;
   services.pipewire.pulse.enable = true;
+
+  services.tor.enable = true;
 
   users.users.a = {
     isNormalUser = true;
@@ -83,7 +86,7 @@
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix gnumake gcc valgrind ccls
     nfs-utils qemu
-    neofetch gitFull mu mutt isync pulsemixer libnotify
+    neofetch gitFull torsocks mu mutt isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox
 
     skypeforlinux discord texlive.combined.scheme-medium
