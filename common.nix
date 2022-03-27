@@ -89,7 +89,9 @@
     neofetch gitFull torsocks mu mutt isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox
 
-    skypeforlinux discord texlive.combined.scheme-medium
+    texlive.combined.scheme-medium ispell
+
+    skypeforlinux discord
 
     (import ./emacs.nix { inherit pkgs; })
   ];

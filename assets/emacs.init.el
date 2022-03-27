@@ -19,18 +19,20 @@
 (setq-default mode-line-format '())
 
 (add-hook 'conf-unix-mode-hook '(lambda ()
-			(local-set-key (kbd "RET")
-				       'electric-newline-and-maybe-indent)))
+				  (local-set-key (kbd "RET")
+						 'electric-newline-and-maybe-indent)))
 
 (add-hook 'text-mode-hook '(lambda ()
-			(local-set-key (kbd "RET")
-				       'electric-newline-and-maybe-indent)))
+			     (flyspell-mode)
+			     (local-set-key (kbd "RET")
+					    'electric-newline-and-maybe-indent)))
 
 (add-hook 'prog-mode-hook '(lambda ()
-			      (local-set-key (kbd "RET")
-					     'electric-newline-and-maybe-indent)
-			      (set 'display-fill-column-indicator-column 80)
-			      (display-fill-column-indicator-mode)))
+			     (flyspell-prog-mode)
+			     (local-set-key (kbd "RET")
+					    'electric-newline-and-maybe-indent)
+			     (set 'display-fill-column-indicator-column 80)
+			     (display-fill-column-indicator-mode)))
 
 (require 'package)
 (add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/"))

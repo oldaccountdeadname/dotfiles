@@ -2,6 +2,7 @@
   home-manager.useGlobalPkgs = true;
 
   home-manager.users.a = { pkgs, ... }: {
+    home.file.".ispell_english".source = ./assets/ispell-dict;
 
     home.file.".emacs.d/init.el".source = ./assets/emacs.init.el;
 
