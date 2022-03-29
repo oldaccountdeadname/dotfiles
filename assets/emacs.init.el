@@ -110,6 +110,7 @@
 (setq company-minimum-prefix-length 1
       company-idle-delay 0.1)
 
+(setq-default lsp-enable-on-type-formatting nil)
 (setq-default c-default-style "bsd"
 	      c-basic-offset 8
 	      indent-tabs-mode t)
