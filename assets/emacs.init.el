@@ -76,6 +76,8 @@
 (define-prefix-command 'editing-map)
 (global-set-key (kbd "C-0") 'editing-map)
 
+(global-set-key (kbd "C-0 s") 'rectangle-mark-mode)
+(global-set-key (kbd "C-0 i") 'string-rectangle)
 (global-set-key (kbd "C-0 d") 'delete-whitespace-rectangle)
 
 (define-prefix-command 'wm-map)
