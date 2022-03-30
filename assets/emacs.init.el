@@ -136,7 +136,11 @@
 (setq org-hide-leading-stars t)
 (setq org-superstar-remove-leading-stars t)
 (setq org-superstar-leading-bullet ?\s)
-(setq org-superstar-headline-bullets-list '(" "))
+(setq org-superstar-headline-bullets-list '(" ")
+      org-superstar-item-bullet-alist
+      '((?* . ?•)
+	(?+ . ?›)
+	(?- . ?–)))
 
 (add-hook 'org-mode-hook '(lambda ()
 			    (setq line-spacing 4)
