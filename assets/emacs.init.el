@@ -68,8 +68,8 @@
 
 (global-set-key (kbd "C-f") 'goto-line)
 
-(global-set-key (kbd "C-m") 'scroll-down)
-(global-set-key (kbd "C-b") 'scroll-up)
+(global-set-key (kbd "C-y") '(lambda () (interactive) (scroll-up   10)))
+(global-set-key (kbd "C-p") '(lambda () (interactive) (scroll-down 10)))
 
 (global-set-key (kbd "C-)") 'universal-argument)
 
