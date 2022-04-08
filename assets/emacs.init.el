@@ -91,6 +91,11 @@
 (global-set-key (kbd "C-9 s") 'windmove-down)
 
 (global-set-key (kbd "C-9 d") 'delete-window)
+
+(global-set-key (kbd "C-/") 'swiper)
+(global-set-key (kbd "C-x f") 'counsel-find-file)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
