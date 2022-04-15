@@ -12,10 +12,6 @@
     };
 
     home.file.".mbsyncrc".source = ./assets/isync.conf;
-    home.file.".config/mutt" = {
-      source = ./assets/mutt;
-      recursive = true;
-    };
 
     home.file.".config/picom/picom.conf".source = ./assets/picom;
   };

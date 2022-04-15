@@ -87,7 +87,7 @@
     man-pages man-pages-posix bintools gnumake gcc valgrind nvi
     ccls python39Packages.python-lsp-server
     nfs-utils qemu
-    neofetch gitFull torsocks mu mutt isync pulsemixer libnotify
+    neofetch gitFull torsocks mu isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox
 
     texlive.combined.scheme-medium ispell
