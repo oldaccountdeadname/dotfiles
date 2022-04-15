@@ -19,11 +19,4 @@
 
     home.file.".config/picom/picom.conf".source = ./assets/picom;
   };
-
-  home-manager.users.root = { pkgs, ... }: {
-    home.file.".config/amp" = {
-      source = ./assets/amp;
-      recursive = true;
-    };
-  };
 }
