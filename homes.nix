@@ -6,11 +6,6 @@
 
     home.file.".emacs.d/init.el".source = ./assets/emacs.init.el;
 
-    home.file.".config/amp" = {
-      source = ./assets/amp;
-      recursive = true;
-    };
-
     home.file.".config/kitty" = {
       source = ./assets/kitty;
       recursive = true;

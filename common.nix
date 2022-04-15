@@ -79,12 +79,12 @@
 
   environment.homeBinInPath = true;
   environment.variables = {
-    "EDITOR" = "amp";
+    "EDITOR" = "vi";
   };
 
   fonts.fonts = with pkgs; [ fira-code source-sans-pro source-serif-pro ];
   environment.systemPackages = with pkgs; [
-    man-pages man-pages-posix bintools gnumake gcc valgrind
+    man-pages man-pages-posix bintools gnumake gcc valgrind nvi
     ccls python39Packages.python-lsp-server
     nfs-utils qemu
     neofetch gitFull torsocks mu mutt isync pulsemixer libnotify
