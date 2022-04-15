@@ -80,12 +80,14 @@
   environment.homeBinInPath = true;
   environment.variables = {
     "EDITOR" = "vi";
+
+    "LANGSERV_CC" = "${pkgs.clang-tools}/bin/clangd";
   };
 
   fonts.fonts = with pkgs; [ fira-code source-sans-pro source-serif-pro ];
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix bintools gnumake gcc valgrind nvi
-    ccls python39Packages.python-lsp-server
+    clang-tools python39Packages.python-lsp-server
     nfs-utils qemu
     neofetch gitFull torsocks mu isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox

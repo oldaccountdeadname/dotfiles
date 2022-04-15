@@ -114,7 +114,7 @@
  '(fira-code-mode-disabled-ligatures '("x"))
  '(org-agenda-files '("/mnt/remote/org/default.org"))
  '(package-selected-packages
-   '(org-superstar magit doom-themes ccls flycheck lsp-mode dracula-theme fira-code-mode f ##)))
+   '(org-superstar magit doom-themes flycheck lsp-mode dracula-theme fira-code-mode f ##)))
 
 (require 'fira-code-mode)
 (fira-code-mode-set-font)
@@ -135,10 +135,10 @@
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . prog-mode))
 
 (require 'lsp-mode)
+(setq lsp-clangd-binary-path (getenv "LANGSERV_CC"))
 
-(add-hook 'c-mode-hook '(lambda ()
+(add-hook 'c-mode-common-hook '(lambda ()
 			  (flycheck-mode)
-			  (require 'ccls)
 			  (lsp)
 			  (company-mode)))
 
