@@ -66,6 +66,16 @@
 (global-set-key lup 'beginning-of-buffer)
 (global-set-key ldown 'end-of-buffer)
 
+(global-set-key (kbd "<f12>") '(lambda ()
+				 (interactive)
+				 (split-window-horizontally)
+				 (vterm)))
+
+(global-set-key (kbd "S-<f12>") '(lambda ()
+				 (interactive)
+				 (split-window-vertically)
+				 (vterm)))
+
 (global-set-key (kbd "C-f") 'goto-line)
 
 (global-set-key (kbd "C-S-p") '(lambda () (interactive) (scroll-up   10)))
