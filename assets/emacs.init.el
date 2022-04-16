@@ -183,7 +183,7 @@ they/them")
         '(("smtp.gmail.com" 587 "lincolnauster@gmail.com"
            (string-trim
 	    (shell-command-to-string
-	     "gpg -q --batch -q --decrypt ~/.config/mutt/account.gpg")))))
+	     "gpg -q --batch -q --decrypt ~/.config/gmail-pass.gpg")))))
 
 (add-to-list 'load-path "/run/current-system/sw/share/emacs/site-lisp/mu4e")
 (require 'mu4e)
