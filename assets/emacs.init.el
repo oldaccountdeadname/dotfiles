@@ -34,6 +34,11 @@
 			     (set 'display-fill-column-indicator-column 80)
 			     (display-fill-column-indicator-mode)))
 
+(setq-default visual-fill-column-width 80)
+(add-hook 'visual-line-mode-hook '(lambda ()
+				    (setq visual-fill-column-center-text t)
+				    (visual-fill-column-mode)))
+
 (require 'package)
 (add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
