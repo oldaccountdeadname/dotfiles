@@ -34,6 +34,8 @@
 			     (set 'display-fill-column-indicator-column 80)
 			     (display-fill-column-indicator-mode)))
 
+(add-hook 'haskell-mode-hook #'lsp)
+
 (setq-default visual-fill-column-width 80)
 (add-hook 'visual-line-mode-hook '(lambda ()
 				    (setq visual-fill-column-center-text t)
