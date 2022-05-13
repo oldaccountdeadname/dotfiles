@@ -19,8 +19,8 @@
       what = "hub.marx:/nas/public";
       type = "nfs";
       wantedBy = [ "multi-user.target" ];
-      wants = [ "network-online.target" ];
-      after = [ "network-online.target" ];
+      wants = [ "network-online.target" "network.target" ];
+      after = [ "network-online.target" "network.target" ];
     }
   ];
 
