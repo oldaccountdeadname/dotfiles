@@ -12,9 +12,6 @@
 
 (setq inhibit-startup-message t)
 
-(setq-default left-margin-width  2)
-(setq-default right-margin-width 2)
-
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format '())
 
@@ -121,7 +118,7 @@
  '(fira-code-mode-disabled-ligatures '("x"))
  '(org-agenda-files '("/mnt/remote/org/default.org"))
  '(package-selected-packages
-   '(org-superstar magit doom-themes flycheck lsp-mode dracula-theme fira-code-mode f ##)))
+   '(acme-theme org-superstar magit flycheck lsp-mode dracula-theme fira-code-mode f ##)))
 
 (require 'fira-code-mode)
 (fira-code-mode-set-font)
@@ -129,7 +126,7 @@
 (set-frame-font "Fira Code 11" nil t)
 
 (set-face-font 'default ":antialias=true")
-(load-theme 'doom-nord-light 't)
+(load-theme 'acme 't)
 
 (setq company-minimum-prefix-length 1
       company-idle-delay 0.1)
@@ -202,20 +199,20 @@ they/them")
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
- '(org-block ((t (:extend t :background "#C2D0E7" :family "FiraCode"))))
- '(org-checkbox ((t (:inherit org-todo :family "FiraCode"))))
- '(org-date ((t (:foreground "#9A7500" :family "FiraCode"))))
+ '(org-block ((t (:extend t :background "#FFFFE8" :family "FiraCode"))))
+ '(org-checkbox ((t (:background "#FFFFE8" :inherit org-todo :family "FiraCode"))))
+ '(org-date ((t (:family "FiraCode"))))
  '(org-document-info-keyword ((t (:inherit shadow :family "FiraCode"))))
- '(org-document-title ((t (:foreground "#ffb86c" :weight bold :height 130 :family "FiraCode"))))
+ '(org-document-title ((t (:weight bold :height 130 :background "#FFFFE8" :family "FiraCode"))))
  '(org-indent ((t (:inherit org-hide :family "FiraCode"))))
- '(org-level-1 ((t (:family "FiraCode" :inherit bold :extend nil :foreground "#ff79c6" :height 140))))
- '(org-level-2 ((t (:family "FiraCode" :inherit bold :extend nil :foreground "#bd93f9" :height 140))))
- '(org-level-3 ((t (:extend nil :weight semi-bold :family "FiraCode"))))
+ '(org-level-1 ((t (:family "FiraCode" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
+ '(org-level-2 ((t (:family "FiraCode" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
+ '(org-level-3 ((t (:extend nil :overline nil :background "#FFFFE8" :weight semi-bold :family "FiraCode"))))
  '(org-level-4 ((t (:family "FiraCode"))))
  '(org-level-5 ((t (:family "FiraCode"))))
- '(org-meta-line ((t (:foreground "#828b9b" :family "FiraCode"))))
+ '(org-meta-line ((t (:family "FiraCode"))))
  '(org-superstar-item ((t (:inherit default :family "FiraCode"))))
- '(org-table ((t (:foreground "#842879" :family "FiraCode"))))
- '(org-todo ((t (:foreground "#4a4a4a" :weight bold :family "FiraCode"))))
- '(org-verbatim ((t (:foreground "#4F894C" :weight semi-bold :family "FiraCode"))))
+ '(org-table ((t (:family "FiraCode"))))
+ '(org-todo ((t (:weight bold :family "FiraCode"))))
+ '(org-verbatim ((t (:weight semi-bold :family "FiraCode"))))
  '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4")))))
