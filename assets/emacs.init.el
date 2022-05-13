@@ -120,10 +120,27 @@
  '(package-selected-packages
    '(acme-theme org-superstar magit flycheck lsp-mode dracula-theme fira-code-mode f ##)))
 
+; The below apply ligatures *only to text in Fira Code*, which
+;; prevents weirdness in variable-pitch-mode buffers. It's a bit of a
+;; broad solution, but end behavior is perfectly fine.
+
+(defun is-fira (pos)
+  (let ((font (font-at pos)))
+    (if (not font) nil
+      (let ((family (font-get font :family)))
+	(if (not family) nil
+	  (or (string= "Fira Code" family)
+	      (string= "FiraCode"  family)))))))
+
+(setq-default prettify-symbols-compose-predicate
+	     (lambda (start end match)
+		(and (prettify-symbols-default-compose-p start end match)
+		    (is-fira start))))
+
 (require 'fira-code-mode)
 (fira-code-mode-set-font)
 (global-fira-code-mode)
-(set-frame-font "Fira Code 11" nil t)
+(set-frame-font "Fira Code 10" nil t)
 
 (set-face-font 'default ":antialias=true")
 (load-theme 'acme 't)
@@ -199,20 +216,21 @@ they/them")
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
- '(org-block ((t (:extend t :background "#FFFFE8" :family "FiraCode"))))
- '(org-checkbox ((t (:background "#FFFFE8" :inherit org-todo :family "FiraCode"))))
- '(org-date ((t (:family "FiraCode"))))
- '(org-document-info-keyword ((t (:inherit shadow :family "FiraCode"))))
- '(org-document-title ((t (:weight bold :height 130 :background "#FFFFE8" :family "FiraCode"))))
- '(org-indent ((t (:inherit org-hide :family "FiraCode"))))
- '(org-level-1 ((t (:family "FiraCode" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
- '(org-level-2 ((t (:family "FiraCode" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
- '(org-level-3 ((t (:extend nil :overline nil :background "#FFFFE8" :weight semi-bold :family "FiraCode"))))
- '(org-level-4 ((t (:family "FiraCode"))))
- '(org-level-5 ((t (:family "FiraCode"))))
- '(org-meta-line ((t (:family "FiraCode"))))
- '(org-superstar-item ((t (:inherit default :family "FiraCode"))))
- '(org-table ((t (:family "FiraCode"))))
- '(org-todo ((t (:weight bold :family "FiraCode"))))
- '(org-verbatim ((t (:weight semi-bold :family "FiraCode"))))
+ '(org-block ((t (:extend t :background "#FFFFE8" :family "Fira Code"))))
+ '(org-inline-source-block ((t (:extend t :background "#FFFFE8" :family "Fira Code"))))
+ '(org-checkbox ((t (:background "#FFFFE8" :inherit org-todo :family "Fira Code"))))
+ '(org-date ((t (:family "Fira Code"))))
+ '(org-document-info-keyword ((t (:inherit shadow :family "Fira Code"))))
+ '(org-document-title ((t (:weight bold :height 130 :background "#FFFFE8" :family "Fira Code"))))
+ '(org-indent ((t (:inherit org-hide :family "Fira Code"))))
+ '(org-level-1 ((t (:family "Fira Code" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
+ '(org-level-2 ((t (:family "Fira Code" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
+ '(org-level-3 ((t (:extend nil :overline nil :background "#FFFFE8" :weight semi-bold :family "Fira Code"))))
+ '(org-level-4 ((t (:family "Fira Code"))))
+ '(org-level-5 ((t (:family "Fira Code"))))
+ '(org-meta-line ((t (:family "Fira Code"))))
+ '(org-superstar-item ((t (:inherit default :family "Fira Code"))))
+ '(org-table ((t (:family "Fira Code"))))
+ '(org-todo ((t (:weight bold :family "Fira Code"))))
+ '(org-verbatim ((t (:weight semi-bold :family "Fira Code"))))
  '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4")))))
