@@ -234,3 +234,5 @@ they/them")
  '(org-todo ((t (:weight bold :family "Fira Code"))))
  '(org-verbatim ((t (:weight semi-bold :family "Fira Code"))))
  '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4")))))
+
+(set-frame-font "Fira Code 10" nil t)
