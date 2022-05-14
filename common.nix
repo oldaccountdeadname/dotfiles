@@ -82,6 +82,7 @@
     "EDITOR" = "vi";
 
     "LANGSERV_CC" = "${pkgs.clang-tools}/bin/clangd";
+    "LANGSERV_HK" = "${pkgs.haskell-language-server}/bin/haskell-language-server";
   };
 
   fonts.fonts = with pkgs; [ fira-code source-sans-pro source-serif-pro ];

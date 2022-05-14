@@ -156,7 +156,9 @@
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . prog-mode))
 
 (require 'lsp-mode)
+(require 'lsp-haskell)
 (setq lsp-clangd-binary-path (getenv "LANGSERV_CC"))
+(setq lsp-haskell-server-path (getenv "LANGSERV_HK"))
 
 (add-hook 'c-mode-common-hook '(lambda ()
 			  (flycheck-mode)
