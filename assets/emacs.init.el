@@ -97,6 +97,8 @@
 (global-set-key (kbd "C-x f") 'counsel-find-file)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 
+(global-set-key (kbd "RET") #'electric-newline-and-maybe-indent)
+
 ;;; Basic UI
 
 (tool-bar-mode -1)
@@ -114,21 +116,10 @@
 
 (setq x-select-enable-clipboard t)
 
-(add-hook 'conf-unix-mode-hook
-	  '(lambda ()
-	     (flyspell-mode)
-	     (local-set-key (kbd "RET")
-			    'electric-newline-and-maybe-indent)))
-
-(add-hook 'text-mode-hook
-	  '(lambda ()
-	     (local-set-key (kbd "RET")
-			    'electric-newline-and-maybe-indent)))
+(add-hook 'conf-unix-mode-hook #'flyspell-mode)
 
 (add-hook 'prog-mode-hook '(lambda ()
 			     (flyspell-prog-mode)
-			     (local-set-key (kbd "RET")
-					    'electric-newline-and-maybe-indent)
 			     (set 'display-fill-column-indicator-column 80)
 			     (display-fill-column-indicator-mode)))
 
