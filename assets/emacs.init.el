@@ -1,3 +1,6 @@
+(defun make-vector (list)
+  (vconcat '() list))
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-display-line-numbers-mode 1)
@@ -79,6 +82,11 @@
 				 (interactive)
 				 (split-window-vertically)
 				 (vterm)))
+
+(global-set-key (kbd "C-<f12>") #'(lambda ()
+				    (interactive)
+				    (split-window-horizontally)
+				    (cfw:open-org-calendar)))
 
 (global-set-key (kbd "C-f") 'goto-line)
 
@@ -170,6 +178,15 @@
 			       (lsp)
 			       (company-mode)))
 
+(require 'calfw-org)
+(setq calendar-holidays nil)
+
+(setq calendar-day-name-array (make-vector
+	       (mapcar #'downcase calendar-day-name-array)))
+
+(setq calendar-month-name-array (make-vector
+	       (mapcar #'downcase calendar-month-name-array)))
+
 (require 'org-superstar)
 (setq org-hide-leading-stars t)
 (setq org-superstar-remove-leading-stars t)
@@ -235,6 +252,9 @@ they/them")
  '(org-table ((t (:family "Fira Code"))))
  '(org-todo ((t (:weight bold :family "Fira Code"))))
  '(org-verbatim ((t (:weight semi-bold :family "Fira Code"))))
- '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4")))))
+ '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4"))))
+ '(cfw:face-title ((t (:height 1.4 :inherit variable-pitch))))
+ '(cfw:face-day-title ((t (:background "#FFFFFE8"))))
+ '(cfw:face-toolbar ((t (:inherit cfw:face-day-title)))))
 
 (set-frame-font "Fira Code 10" nil t)
