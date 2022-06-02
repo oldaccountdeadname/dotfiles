@@ -87,8 +87,8 @@
 
   fonts.fonts = with pkgs; [ fira-code source-sans-pro source-serif-pro ];
   environment.systemPackages = with pkgs; [
-    man-pages man-pages-posix bintools gnumake gcc valgrind nvi
-    clang-tools python39Packages.python-lsp-server
+    man-pages man-pages-posix bintools gnumake gcc ghc valgrind nvi
+    clang-tools python39Packages.python-lsp-server haskell-language-server
     nfs-utils qemu
     neofetch gitFull torsocks mu mutt isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox
