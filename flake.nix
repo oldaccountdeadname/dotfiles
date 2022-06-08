@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
 
   inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
 

@@ -171,7 +171,7 @@
  '(org-table ((t (:family "Fira Code"))))
  '(org-todo ((t (:weight bold :family "Fira Code"))))
  '(org-verbatim ((t (:weight semi-bold :family "Fira Code"))))
- '(variable-pitch ((t (:weight normal :height 1.2 :family "SourceSerif4"))))
+ '(variable-pitch ((t (:weight normal :height 1.2 :family "Source Serif 4"))))
  '(cfw:face-title ((t (:height 1.4 :inherit variable-pitch))))
  '(cfw:face-day-title ((t (:background "#FFFFFE8"))))
  '(cfw:face-toolbar ((t (:inherit cfw:face-day-title)))))
