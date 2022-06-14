@@ -108,6 +108,11 @@
 (toggle-scroll-bar -1)
 (setq inhibit-startup-message t)
 
+(pixel-scroll-mode 1)
+(setq pixel-scroll-precision-large-scroll-height 40.0)
+(setq pixel-scroll-precision-interpolation-factor 30)
+(setq pixel-scroll-precision-use-momentum t)
+
 (setq-default header-line-format mode-line-format)
 (setq-default mode-line-format '())
 
