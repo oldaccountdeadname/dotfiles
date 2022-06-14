@@ -157,22 +157,19 @@
 (setq-default lsp-enable-on-type-formatting nil)
 
 ;;; Custom(izations) and Fonts
+
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
- '(org-block ((t (:extend t :background "#FFFFE8" :family "Fira Code"))))
- '(org-inline-source-block ((t (:extend t :background "#FFFFE8" :family "Fira Code"))))
- '(org-checkbox ((t (:background "#FFFFE8" :inherit org-todo :family "Fira Code"))))
+ '(org-block ((t (:extend t :background "#ffffff" :family "Fira Code"))))
+ '(org-inline-source-block ((t (:extend t :background "#ffffff" :family "Fira Code"))))
+ '(org-checkbox ((t (:background "#ffffff" :inherit org-todo :family "Fira Code"))))
  '(org-date ((t (:family "Fira Code"))))
  '(org-document-info-keyword ((t (:inherit shadow :family "Fira Code"))))
- '(org-document-title ((t (:weight bold :height 130 :background "#FFFFE8" :family "Fira Code"))))
+ '(org-document-title ((t (:weight bold :height 130 :background "#ffffff" :family "Fira Code"))))
  '(org-indent ((t (:inherit org-hide :family "Fira Code"))))
- '(org-level-1 ((t (:family "Fira Code" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
- '(org-level-2 ((t (:family "Fira Code" :overline nil :background "#FFFFE8" :inherit bold :extend nil :height 140))))
- '(org-level-3 ((t (:extend nil :overline nil :background "#FFFFE8" :weight semi-bold :family "Fira Code"))))
+ '(org-level-1 ((t (:family "Fira Code" :overline nil :background "#ffffff" :inherit bold :extend nil :height 140))))
+ '(org-level-2 ((t (:family "Fira Code" :overline nil :background "#ffffff" :inherit bold :extend nil :height 140))))
+ '(org-level-3 ((t (:extend nil :overline nil :background "#ffffff" :weight semi-bold :family "Fira Code"))))
  '(org-level-4 ((t (:family "Fira Code"))))
  '(org-level-5 ((t (:family "Fira Code"))))
  '(org-meta-line ((t (:family "Fira Code"))))
@@ -182,16 +179,14 @@
  '(org-verbatim ((t (:weight semi-bold :family "Fira Code"))))
  '(variable-pitch ((t (:weight normal :height 1.2 :family "Source Serif 4"))))
  '(cfw:face-title ((t (:height 1.4 :inherit variable-pitch))))
- '(cfw:face-day-title ((t (:background "#FFFFFE8"))))
+ '(cfw:face-day-title ((t (:background "#ffffff"))))
  '(cfw:face-toolbar ((t (:inherit cfw:face-day-title)))))
 
 (set-frame-font "Fira Code 10" nil t)
 
 (custom-set-variables
  '(fira-code-mode-disabled-ligatures '("x"))
- '(org-agenda-files '("/mnt/remote/org/default.org"))
- '(package-selected-packages
-   '(acme-theme org-superstar magit flycheck lsp-mode dracula-theme fira-code-mode f ##)))
+ '(org-agenda-files '("/mnt/remote/org/default.org")))
 
 (setq-default prettify-symbols-compose-predicate
 	     (lambda (start end match)
@@ -255,7 +250,7 @@ they/them")
 
 ;;; Aesthetic Adjustments
 
-(load-theme 'acme 't)
+(load-theme 'modus-operandi 't)
 (add-hook 'visual-line-mode-hook '(lambda ()
 				    (setq visual-fill-column-center-text t)
 				    (visual-fill-column-mode)))
