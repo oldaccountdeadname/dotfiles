@@ -124,8 +124,9 @@
 			     (display-fill-column-indicator-mode)))
 
 (add-hook 'c-mode-common-hook #'all-the-fancy-things)
-(add-hook 'python-mode-hook   #'all-the-fancy-things)
 (add-hook 'haskell-mode-hook  #'all-the-fancy-things)
+(add-hook 'python-mode-hook   #'all-the-fancy-things)
+(add-hook 'rustic-mode-hook   #'all-the-fancy-things)
 
 (add-to-list 'auto-mode-alist '("\\.nix\\'" . prog-mode))
 
@@ -144,6 +145,8 @@
 ;; more flexibility in the NixOS configuration.
 (setq lsp-clangd-binary-path (getenv "LANGSERV_CC"))
 (setq lsp-haskell-server-path (getenv "LANGSERV_HK"))
+
+(setq lsp-rust-server 'rust-analyzer)
 
 (setq-default lsp-enable-on-type-formatting nil)
 

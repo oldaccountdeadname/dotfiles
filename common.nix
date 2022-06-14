@@ -83,12 +83,15 @@
 
     "LANGSERV_CC" = "${pkgs.clang-tools}/bin/clangd";
     "LANGSERV_HK" = "${pkgs.haskell-language-server}/bin/haskell-language-server";
+
+    "RUST_SRC_PATH" = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 
   fonts.fonts = with pkgs; [ fira-code source-sans source-serif ];
   environment.systemPackages = with pkgs; [
     man-pages man-pages-posix bintools gnumake gcc ghc valgrind nvi
     clang-tools python39Packages.python-lsp-server haskell-language-server
+    cargo rustc rust-analyzer
     nfs-utils qemu
     neofetch gitFull torsocks mu mutt isync pulsemixer libnotify
     xclip kitty zathura feh polybar firefox
