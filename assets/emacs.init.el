@@ -3,6 +3,7 @@
 (require 'lsp-haskell)
 (require 'lsp-mode)
 (require 'mu4e)
+(require 'nix-mode)
 (require 'org-superstar)
 (require 'package)
 
@@ -128,7 +129,7 @@
 (add-hook 'python-mode-hook   #'all-the-fancy-things)
 (add-hook 'rustic-mode-hook   #'all-the-fancy-things)
 
-(add-to-list 'auto-mode-alist '("\\.nix\\'" . prog-mode))
+(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
 
 (setq-default c-default-style "bsd"
 	      c-basic-offset 8
