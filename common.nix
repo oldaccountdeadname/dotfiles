@@ -33,6 +33,7 @@
   services.pipewire.pulse.enable = true;
 
   services.tor.enable = true;
+  services.tor.client.enable = true;
 
   users.users.a = {
     isNormalUser = true;
@@ -67,6 +68,7 @@
 
     "RUST_SRC_PATH" = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
+
 
   fonts.fonts = with pkgs; [ fira-code source-sans source-serif ];
   environment.systemPackages = with pkgs; [
