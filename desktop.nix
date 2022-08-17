@@ -3,6 +3,25 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  systemd.mounts = [
+    {
+      what = "hub.marx:/nas/remote";
+      where = "/mnt/remote";
+      type = "nfs";
+      wantedBy = [ "multi-user.target" ];
+      wants = [ "network-online.target" ];
+      after = [ "network-online.target" ];
+    }
+    {
+      where = "/mnt/public";
+      what = "hub.marx:/nas/public";
+      type = "nfs";
+      wantedBy = [ "multi-user.target" ];
+      wants = [ "network-online.target" "network.target" ];
+      after = [ "network-online.target" "network.target" ];
+    }
+  ];
+
   networking.hostName = "nixos-desktop";
   networking.wireless = {
     enable = true;

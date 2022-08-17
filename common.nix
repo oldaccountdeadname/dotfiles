@@ -5,25 +5,6 @@
 
   networking.firewall.allowedTCPPorts = [ 80 443 1965 ];
 
-  systemd.mounts = [
-    {
-      what = "hub.marx:/nas/remote";
-      where = "/mnt/remote";
-      type = "nfs";
-      wantedBy = [ "multi-user.target" ];
-      wants = [ "network-online.target" ];
-      after = [ "network-online.target" ];
-    }
-    {
-      where = "/mnt/public";
-      what = "hub.marx:/nas/public";
-      type = "nfs";
-      wantedBy = [ "multi-user.target" ];
-      wants = [ "network-online.target" "network.target" ];
-      after = [ "network-online.target" "network.target" ];
-    }
-  ];
-
   time.timeZone = "America/Denver";
 
   i18n.defaultLocale = "en_US.UTF-8";
