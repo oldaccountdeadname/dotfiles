@@ -16,5 +16,7 @@
     home.file.".mbsyncrc".source = ./assets/isync.conf;
 
     home.file.".config/picom/picom.conf".source = ./assets/picom;
+
+    home.stateVersion = "21.11";
   };
 }
