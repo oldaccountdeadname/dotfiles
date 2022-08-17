@@ -35,7 +35,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
   services.xserver.displayManager.gdm.wayland = false;
 

@@ -3,7 +3,8 @@
 
   inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
 
-  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.home-manager.url = "github:nix-community/home-manager/release-22.05";
+  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.painted = {
     url = "github:lincolnauster/painted/dev";
@@ -23,6 +24,15 @@
         ];
       })
     ]; in {
+      defaultPackage.x86_64-linux =
+        self.nixosConfigurations.iso.config.system.build.isoImage;
+
+      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = commonModules ++
+          [ "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            ./envs/gnome.nix];
+      };
 
       nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
