@@ -160,16 +160,18 @@
 
 (custom-set-faces
  '(default ((t (:background nil))))
+ '(org-agenda-date-today ((t (:extend t :inherit 'org-agenda-date :background nil))))
+ '(org-agenda-date ((t (:extend t :height 150))))
  '(org-block ((t (:extend t :background "#ffffff" :family "Fira Code"))))
- '(org-inline-source-block ((t (:extend t :background "#ffffff" :family "Fira Code"))))
- '(org-checkbox ((t (:background "#ffffff" :inherit org-todo :family "Fira Code"))))
+ '(org-inline-source-block ((t (:extend t :background nil :family "Fira Code"))))
+ '(org-checkbox ((t (:background nil :box nil :family "Fira Code"))))
  '(org-date ((t (:family "Fira Code"))))
  '(org-document-info-keyword ((t (:inherit shadow :family "Fira Code"))))
- '(org-document-title ((t (:weight bold :height 130 :background "#ffffff" :family "Fira Code"))))
+ '(org-document-title ((t (:weight bold :height 130 :background nil :family "Fira Code"))))
  '(org-indent ((t (:inherit org-hide :family "Fira Code"))))
- '(org-level-1 ((t (:family "Fira Code" :overline nil :background "#ffffff" :inherit bold :extend nil :height 140))))
- '(org-level-2 ((t (:family "Fira Code" :overline nil :background "#ffffff" :inherit bold :extend nil :height 140))))
- '(org-level-3 ((t (:extend nil :overline nil :background "#ffffff" :weight semi-bold :family "Fira Code"))))
+ '(org-level-1 ((t (:family "Fira Code" :overline nil :background nil :inherit bold :extend nil :height 140))))
+ '(org-level-2 ((t (:family "Fira Code" :overline nil :background nil :inherit bold :extend nil :height 140))))
+ '(org-level-3 ((t (:extend nil :overline nil :background nil :weight semi-bold :family "Fira Code"))))
  '(org-level-4 ((t (:family "Fira Code"))))
  '(org-level-5 ((t (:family "Fira Code"))))
  '(org-meta-line ((t (:family "Fira Code"))))
@@ -179,7 +181,7 @@
  '(org-verbatim ((t (:weight semi-bold :family "Fira Code"))))
  '(variable-pitch ((t (:weight normal :height 1.2 :family "Source Serif 4"))))
  '(cfw:face-title ((t (:height 1.4 :inherit variable-pitch))))
- '(cfw:face-day-title ((t (:background "#ffffff"))))
+ '(cfw:face-day-title ((t (:background nil))))
  '(cfw:face-toolbar ((t (:inherit cfw:face-day-title)))))
 
 (set-frame-font "Fira Code 10" nil t)
@@ -217,6 +219,13 @@
 	(?+ . ?›)
 	(?- . ?–)))
 
+(setq org-agenda-current-time-string
+      "now ────────────────────")
+(setq org-agenda-time-grid
+      '((daily today require-timed)
+        (800 1000 1200 1400 1600 1800 2000)
+        "—" "────────────────────────"))
+
 (add-hook 'org-mode-hook '(lambda ()
 			    (setq line-spacing 4)
 			    (setq cursor-type 'bar)
@@ -226,6 +235,11 @@
 			    (org-superstar-mode 1)
 			    (display-line-numbers-mode -1)
 			    (variable-pitch-mode 1)))
+
+(add-hook 'org-agenda-mode-hook '(lambda ()
+				   (setq line-spacing 8)
+				   (setq cursor-type nil)
+				   (display-line-numbers-mode -1)))
 
 ;;; mu4e stuff
 (setq mu4e-compose-signature
@@ -250,7 +264,7 @@ they/them")
 
 ;;; Aesthetic Adjustments
 
-(load-theme 'modus-operandi 't)
+(load-theme 'doom-earl-grey 't)
 (add-hook 'visual-line-mode-hook '(lambda ()
 				    (setq visual-fill-column-center-text t)
 				    (visual-fill-column-mode)))
