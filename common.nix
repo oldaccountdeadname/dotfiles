@@ -83,6 +83,8 @@
 
     skypeforlinux discord
 
+    corefonts
+
     (import ./emacs.nix { inherit pkgs; })
   ];
 
